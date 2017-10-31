@@ -45,7 +45,14 @@ class ListsController < ApplicationController
       end
       
   end  
-
+     def complete
+    if @list.completed == false
+      @list.update_attribute(:completed, true)
+    else
+      @list.update_attribute(:completed, false)
+    end
+    redirect_to list_path(@list)
+  end
 
   private
 

@@ -14,12 +14,15 @@
        
         <% @lists.each do |list| %>
           <tr>
+            
             <td><%= list.name %></td>
             <td><%= list.duedate %></td>
             <td><%= list.note %></td>
             <td>
             <%= link_to 'edit', edit_list_path(list) ,class: "btn btn-sm btn-default" %>
+            <span class="glyphicon glyphicon-edit"></span>
             <%= link_to 'Destroy', list_path(list) ,class: "btn btn-sm btn-default", method: :delete, data:{ confirm: "Are you sure?" } %>
+            <span class="glyphicon glyphicon-edit"></span>
             </td> 
           </tr>
         <% end %>
@@ -30,3 +33,5 @@
   
 
 </div>
+
+  
