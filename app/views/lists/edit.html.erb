@@ -1,0 +1,20 @@
+<%= form_for @list do |f| %>
+  <%= f.label :name, "Name"%>
+  <%= f.text_field :name %>
+
+  <%= f.label :duedate, "DueDate"%>
+  <%= f.text_field :duedate%>
+
+  <%= f.label :note, "Note"%>
+  <%= f.text_area :note %>
+
+  <%= f.submit "Update"%>
+<%end%>
+
+<% if @list.errors.present? %>
+  <ul>
+    <% @list.errors.each do |error, message| %>
+      <li> <%= "#{error.capitalize} #{message}" %></li>
+    <% end %> 
+  </ul>    
+<% end %>
